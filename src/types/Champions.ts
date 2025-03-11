@@ -1,11 +1,11 @@
-type ChampionInfo = {
+type Info = {
   attack: number;
   defense: number;
   magic: number;
   difficulty: number;
 };
 
-type ChampionImage = {
+type Image = {
   full: string;
   sprite: string;
   group: string;
@@ -15,7 +15,7 @@ type ChampionImage = {
   h: number;
 };
 
-type ChampionStats = {
+type Stats = {
   hp: number;
   hpperlevel: number;
   mp: number;
@@ -45,11 +45,11 @@ type Champion = {
   name: string;
   title: string;
   blurb: string;
-  info: ChampionInfo;
-  image: ChampionImage;
+  info: Info;
+  image: Image;
   tags: string[];
   partype: string;
-  stats: ChampionStats;
+  stats: Stats;
 };
 
 // type Champions = {

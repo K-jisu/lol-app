@@ -27,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="py-[100px]"
-      >
+      <body className="py-[100px]">
         <header className="bg-gray-800 text-white py-4 fixed top-0 w-full z-10">
           <nav className="container mx-auto flex justify-around">
             <Link href={"/"}>홈</Link>
