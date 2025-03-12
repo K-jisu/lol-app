@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -12,8 +13,10 @@ const ChampionCard = ({
     <Link href={`/champions/${id}`}>
       <div className="border-white border-solid border rounded p-4 hover:shadow-lg">
         <figure>
-          <img
-            src={process.env.NEXT_PUBLIC_RIOT_CHAMPION_IMG_URL + image.full}
+          <Image
+            width={image.w * 2}
+            height={image.h * 2}
+            src={`${process.env.NEXT_PUBLIC_RIOT_IMG_URL}champion/${image.full}`}
             alt={name}
           />
         </figure>
