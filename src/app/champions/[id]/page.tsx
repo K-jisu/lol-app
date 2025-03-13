@@ -27,10 +27,10 @@ const ChampionDetail = ({ params }: Props) => {
   console.log(champion);
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <section className="flex flex-col gap-3">
-        <h2 className=" text-4xl font-bold mb-4">{champion?.name}</h2>
-        <h3 className="text-2xl text-gray-600 mb-4">{champion?.title}</h3>
+    <div className="text-gray-300 min-h-screen flex flex-col items-center py-10 px-5">
+      <section className="flex flex-col items-center gap-4 text-center max-w-2xl">
+        <h2 className="text-4xl font-bold text-yellow-400">{champion?.name}</h2>
+        <h3 className="text-2xl text-gray-400 italic">{champion?.title}</h3>
         <Image
           width={200}
           height={200}
@@ -38,19 +38,32 @@ const ChampionDetail = ({ params }: Props) => {
             ${process.env.NEXT_PUBLIC_RIOT_IMG_URL}champion/${champion?.image.full}
           `}
           alt={champion!.id}
+          className="rounded-lg border-4 border-yellow-500 shadow-lg"
         />
-        <p className="text-lg">{champion?.lore}</p>
+        <p className="text-lg leading-relaxed px-4">{champion?.lore}</p>
       </section>
-      <section>
-        <h3>{champion?.name}의 스킬</h3>
-        <SkillCard passive={champion!.passive} />
-        {champion?.spells.map((spell) => {
-          return (
-            <>
-              <SkillCard spell={spell} />
-            </>
-          );
-        })}
+      <section className="mt-10 w-full max-w-2xl">
+        <h3 className="text-3xl font-semibold text-yellow-400 mb-6 text-center">
+          {champion?.name}의 스킬
+        </h3>
+        <div className="flex flex-col">
+          <div className="border-b border-gray-600 pb-4 md:border-b-1 md:pb-6">
+            <h2 className="text-xl font-bold text-yellow-300 mb-3 text-center">
+              패시브
+            </h2>
+            <SkillCard passive={champion!.passive} />
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-yellow-500 mb-3 text-center pt-6">
+              액티브
+            </h2>
+            <div className="flex flex-col gap-6">
+              {champion?.spells.map((spell) => {
+                return <SkillCard spell={spell} />;
+              })}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
