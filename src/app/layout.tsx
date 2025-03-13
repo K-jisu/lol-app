@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body className="py-[100px]">
         <header className="bg-gray-800 text-white py-4 fixed top-0 w-full z-10">
           <nav className="container mx-auto flex justify-around">
@@ -36,7 +36,7 @@ export default function RootLayout({
             <Link href={"/rotation"}>챔피언 로테이션</Link>
           </nav>
         </header>
-        <main className="container mx-auto mt-10">
+        <main className="container m-auto mt-10">
           <Providers>{children}</Providers>
         </main>
       </body>

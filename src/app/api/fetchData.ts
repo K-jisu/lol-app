@@ -1,3 +1,4 @@
+// ISR
 const fetchChampion = async (): Promise<Champion[]> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_RIOT_URL}champion.json`, {
     next: {
@@ -8,6 +9,7 @@ const fetchChampion = async (): Promise<Champion[]> => {
   return Object.values(data);
 };
 
+//SSR
 const fetchChampionDetail = async (id: string): Promise<ChampionDetail> => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_RIOT_URL}champion/${id}.json`
@@ -16,6 +18,7 @@ const fetchChampionDetail = async (id: string): Promise<ChampionDetail> => {
   return Object.values(data.data)[0];
 };
 
+//SSG
 const fetchItems = async (): Promise<[string, Item][]> => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_RIOT_URL}item.json`, {
     cache: "force-cache",
