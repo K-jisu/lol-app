@@ -9,8 +9,8 @@ const ItemCard = ({ item }: ItemProps) => {
   const id = item[0];
   const itemInfo = item[1];
   return (
-    <Link href={`/items/${id}`}>
-      <article className="border rounded p-4 hover:shadow-lg">
+    <Link href={`/items/${id}`} className="border rounded p-4 hover:shadow-lg">
+      <article>
         <figure>
           <Image
             className="m-auto rounded-md"
