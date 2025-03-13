@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import parser from "html-react-parser";
 
 type SkillProp =
   | { passive: Passive; spell?: never }
@@ -25,7 +26,7 @@ const SkillCard = ({ passive, spell }: SkillProp) => {
         />
       </figure>
       <p className="mt-3 text-gray-300 text-sm leading-relaxed">
-        {passive ? passive.description : spell.description}
+        {passive ? parser(passive.description) : parser(spell.description)}
       </p>
     </article>
   );
