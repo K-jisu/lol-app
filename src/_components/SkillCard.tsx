@@ -7,21 +7,24 @@ type SkillProp =
 
 const SkillCard = ({ passive, spell }: SkillProp) => {
   return (
-    <article className="border-white border-solid border rounded p-4 hover:shadow-lg">
-      <h3 className="mt-2 text-lg font-semibold">
+    <article className="bg-gray-800 border border-yellow-500 rounded-lg p-4 shadow-md max-w-2xl">
+      <h3 className="text-yellow-400 text-xl font-bold mb-2 text-center">
         {passive ? passive.name : spell.name}
       </h3>
-      <Image
-        width={passive ? passive.image.w : spell.image.w}
-        height={passive ? passive.image.h : spell.image.h}
-        src={`${process.env.NEXT_PUBLIC_RIOT_IMG_URL}${
-          passive
-            ? "passive/" + passive.image.full
-            : "spell/" + spell.image.full
-        }`}
-        alt={passive ? passive.name : spell.name}
-      />
-      <p className="mt-2 text-sm">
+      <figure className="flex justify-center">
+        <Image
+          width={passive ? passive.image.w : spell.image.w}
+          height={passive ? passive.image.h : spell.image.h}
+          src={`${process.env.NEXT_PUBLIC_RIOT_IMG_URL}${
+            passive
+              ? "passive/" + passive.image.full
+              : "spell/" + spell.image.full
+          }`}
+          alt={passive ? passive.name : spell.name}
+          className="rounded-lg border-2 border-yellow-500"
+        />
+      </figure>
+      <p className="mt-3 text-gray-300 text-sm leading-relaxed">
         {passive ? passive.description : spell.description}
       </p>
     </article>

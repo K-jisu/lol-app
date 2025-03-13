@@ -12,7 +12,7 @@ const page = async () => {
     // 구매 가능한 item
     const puchasableItem = item[1].gold.purchasable;
 
-    return lolMap && puchasableItem
+    return lolMap && puchasableItem;
   });
 
   return (
