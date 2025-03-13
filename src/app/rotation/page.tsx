@@ -1,10 +1,41 @@
-const page = async () => {
-  const res = await fetch(
-    `https://kr.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=RGAPI-d4520e6e-a219-4855-8385-2bf6de83e20e`
-  );
-  const data = await res.json();
+import ChampionCard from "@/_components/ChampionCard";
+import fetchData from "../api/fetchData";
+import conversionFreeChampion from "@/utils/conversionFreeChampion";
 
-  return <div>{JSON.stringify(data)}</div>;
+const page = async () => {
+  const rotationData = await fetchData.fetchRotationChampion();
+  const champions = await fetchData.fetchChampion();
+
+  const freeChampionsId = rotationData[0];
+  const freeChampionForNewbieId = rotationData[1];
+  const maxNewbieLevel = rotationData[2];
+
+  const rotationChampions = conversionFreeChampion(freeChampionsId, champions);
+  const freeChampionForNewbie = conversionFreeChampion(
+    freeChampionForNewbieId,
+    champions
+  );
+
+  return (
+    <div>
+      <section>
+        <h2>이번주 무료 챔피언</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {rotationChampions.map((champion) => {
+            return <ChampionCard key={champion.id} champion={champion} />;
+          })}
+        </div>
+      </section>
+      <section>
+        <h2>신규 사용자 무료 챔피언(사용자 레벨 {maxNewbieLevel}LV 까지)</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {freeChampionForNewbie.map((champion) => {
+            return <ChampionCard key={champion.id} champion={champion} />;
+          })}
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default page;
