@@ -1,8 +1,8 @@
-import fetchData from "../api/fetchData";
+import serverApi from "@/utils/serverApi";
 import ChampionCard from "@/_components/ChampionCard";
 
 const ChampinPage = async () => {
-  const champions = await fetchData.fetchChampion();
+  const champions = await serverApi.fetchChampion();
 
   return (
     <div>

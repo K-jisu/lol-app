@@ -1,5 +1,7 @@
 import SkillCard from "@/_components/SkillCard";
-import fetchData from "@/app/api/fetchData";
+import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
+import { ChampionDetail } from "@/types/ChampionDetail";
+import serverApi from "@/utils/serverApi";
 import Image from "next/image";
 
 type Props = {
@@ -14,10 +16,10 @@ type ChampionDetailType = Pick<
 >;
 
 // SSR
-const ChampionDetail = async ({ params }: Props) => {
+const ChampionDetailPage = async ({ params }: Props) => {
   const id = params.id;
 
-  const champion: ChampionDetailType = await fetchData.fetchChampionDetail(id);
+  const champion: ChampionDetailType = await serverApi.fetchChampionDetail(id);
   // const { data: champion, isLoading } = useQuery<ChampionDetailType>({
   //   queryKey: ["champions", id],
   //   queryFn: () => fetchData.fetchChampionDetail(id),
@@ -36,7 +38,7 @@ const ChampionDetail = async ({ params }: Props) => {
           width={200}
           height={200}
           src={`
-            ${process.env.NEXT_PUBLIC_RIOT_IMG_URL}champion/${champion.image.full}
+            ${RIOT_CONSTANT.RIOT_IMG_URL}champion/${champion.image.full}
           `}
           alt={champion.id}
           className="rounded-lg border-4 border-yellow-500 shadow-lg"
@@ -60,7 +62,7 @@ const ChampionDetail = async ({ params }: Props) => {
             </h2>
             <div className="flex flex-col gap-6">
               {champion.spells.map((spell) => {
-                return <SkillCard spell={spell} />;
+                return <SkillCard key={spell.id} spell={spell} />;
               })}
             </div>
           </div>
@@ -70,4 +72,4 @@ const ChampionDetail = async ({ params }: Props) => {
   );
 };
 
-export default ChampionDetail;
+export default ChampionDetailPage;

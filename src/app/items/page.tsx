@@ -1,9 +1,9 @@
-import fetchData from "../api/fetchData";
+import serverApi from "@/utils/serverApi";
 import ItemCard from "@/_components/ItemCard";
 
 //SSG
 const page = async () => {
-  const data = await fetchData.fetchItems();
+  const data = await serverApi.fetchItems();
   // lol item && purchasable 아이템 필터링
   const lolPuchasableItems = data.filter((item) => {
     const mapValues = Object.values(item[1].maps);
