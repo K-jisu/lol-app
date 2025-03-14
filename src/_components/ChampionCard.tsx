@@ -1,5 +1,3 @@
-import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
-import { Champion } from "@/types/Champions";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -18,7 +16,7 @@ const ChampionCard = ({
           <Image
             width={image.w * 2}
             height={image.h * 2}
-            src={`${RIOT_CONSTANT.RIOT_IMG_URL}champion/${image.full}`}
+            src={`${process.env.NEXT_PUBLIC_RIOT_IMG_URL}champion/${image.full}`}
             alt={name}
           />
         </figure>

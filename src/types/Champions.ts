@@ -1,11 +1,11 @@
-export type Info = {
+type Info = {
   attack: number;
   defense: number;
   magic: number;
   difficulty: number;
 };
 
-export type Image = {
+type Image = {
   full: string;
   sprite: string;
   group: string;
@@ -38,7 +38,7 @@ type Stats = {
   attackspeed: number;
 };
 
-export type Champion = {
+type Champion = {
   version: string;
   id: string;
   key: string;

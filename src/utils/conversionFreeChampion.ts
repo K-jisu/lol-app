@@ -5,8 +5,6 @@
  * @returns {Champion[]} - 로테이션 ID로 필터된 리스트
  */
 
-import { Champion } from "@/types/Champions";
-
 const conversionFreeChampion = (
   championsId: number[],
   champions: Champion[]

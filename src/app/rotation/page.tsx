@@ -1,33 +1,10 @@
-"use client";
 import ChampionCard from "@/_components/ChampionCard";
+import fetchData from "../api/fetchData";
 import conversionFreeChampion from "@/utils/conversionFreeChampion";
-import useChampionsQueries from "@/hooks/queries";
 
-const page = () => {
-  const {
-    data: rotationData,
-    isPending,
-    isError,
-  } = useChampionsQueries.useRotationDataQuery();
-
-  const {
-    data: champions,
-    isPending: isPendingChampions,
-    isError: isErrorChampions,
-  } = useChampionsQueries.useChampionsDataQuery();
-
-  if (isPending) {
-    return <div>...loading</div>;
-  }
-  if (isError) {
-    return <div>...Error</div>;
-  }
-  if (isPendingChampions) {
-    return <div>...loading</div>;
-  }
-  if (isErrorChampions) {
-    return <div>...Error</div>;
-  }
+const page = async () => {
+  const rotationData = await fetchData.fetchRotationChampion();
+  const champions = await fetchData.fetchChampion();
 
   const freeChampionsId = rotationData[0];
   const freeChampionForNewbieId = rotationData[1];

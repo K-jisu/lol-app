@@ -1,5 +1,3 @@
-import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
-import { Item } from "@/types/Items";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +16,7 @@ const ItemCard = ({ item }: ItemProps) => {
             className="m-auto rounded-md"
             width={80}
             height={80}
-            src={`${RIOT_CONSTANT.RIOT_IMG_URL}item/${itemInfo.image.full}`}
+            src={`${process.env.NEXT_PUBLIC_RIOT_IMG_URL}item/${itemInfo.image.full}`}
             alt={itemInfo.name}
           />
         </figure>

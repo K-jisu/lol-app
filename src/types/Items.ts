@@ -1,40 +1,47 @@
 // 아이템 이미지 타입
-
-import { Image } from "./Champions";
+interface ItemImage {
+  full: string;
+  sprite: string;
+  group: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
 
 // 아이템 골드 정보 타입
-type ItemGold = {
+interface ItemGold {
   base: number;
   purchasable: boolean;
   total: number;
   sell: number;
-};
+}
 
 // 아이템 맵 적용 여부 타입
-type ItemMaps = {
+interface ItemMaps {
   [key: number]: boolean;
-};
+}
 
 // 아이템 속성 타입
-type ItemStats = {
+interface ItemStats {
   FlatMovementSpeedMod?: number;
-};
+}
 
 // 아이템 타입
-export type Item = {
+interface Item {
   name: string;
   description: string;
   colloq: string;
   plaintext: string;
   into: string[];
-  image: Image;
+  image: ItemImage;
   gold: ItemGold;
   tags: string[];
   maps: ItemMaps;
   stats: ItemStats;
-};
+}
 
 // 전체 아이템 데이터 타입
-export type ItemData = {
+interface ItemData {
   [key: string]: Item;
-};
+}
