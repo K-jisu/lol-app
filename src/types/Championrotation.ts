@@ -1,4 +1,4 @@
-type RotationChampionData = {
+export type RotationChampionData = {
   freeChampionIds: number[];
   freeChampionIdsForNewPlayers: number[];
   maxNewPlayerLevel: number;

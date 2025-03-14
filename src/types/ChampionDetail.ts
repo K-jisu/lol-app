@@ -1,21 +1,23 @@
 // 챔피언의 정보 타입
-type ChampionInfo = {
-  attack: number;
-  defense: number;
-  magic: number;
-  difficulty: number;
-};
+// type ChampionInfo = {
+//   attack: number;
+//   defense: number;
+//   magic: number;
+//   difficulty: number;
+// };
+
+import { Image, Info } from "./Champions";
 
 // 이미지 관련 타입
-type ImageInfo = {
-  full: string;
-  sprite: string;
-  group: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-};
+// type ImageInfo = {
+//   full: string;
+//   sprite: string;
+//   group: string;
+//   x: number;
+//   y: number;
+//   w: number;
+//   h: number;
+// };
 
 // 스킨 타입
 type Skin = {
@@ -26,7 +28,7 @@ type Skin = {
 };
 
 // 챔피언의 스킬 타입
-type Spell = {
+export type Spell = {
   id: string;
   name: string;
   description: string;
@@ -48,24 +50,24 @@ type Spell = {
   maxammo: string;
   range: number[];
   rangeBurn: string;
-  image: ImageInfo;
+  image: Image;
   resource: string;
 };
 
 // 패시브 스킬 타입
-type Passive = {
+export type Passive = {
   name: string;
   description: string;
-  image: ImageInfo;
+  image: Image;
 };
 
 // 챔피언의 주요 데이터 타입
-type ChampionDetail = {
+export type ChampionDetail = {
   id: string;
   key: string;
   name: string;
   title: string;
-  image: ImageInfo;
+  image: Image;
   skins: Skin[];
   lore: string;
   blurb: string;
@@ -73,7 +75,7 @@ type ChampionDetail = {
   enemytips: string[];
   tags: string[];
   partype: string;
-  info: ChampionInfo;
+  info: Info;
   stats: {
     hp: number;
     hpperlevel: number;
@@ -106,7 +108,7 @@ type ChampionData = {
 };
 
 // 데이터를 포함한 상위 타입
-type GameData = {
+export type GameData = {
   type: string;
   format: string;
   version: string;
