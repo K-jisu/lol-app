@@ -1,5 +1,7 @@
 "use client";
 import fetchData from "@/app/api/fetchData";
+import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
+import { Item } from "@/types/Items";
 import parse from "html-react-parser";
 import Image from "next/image";
 
@@ -25,7 +27,7 @@ const page = async ({ params }: Props) => {
           <Image
             width={80}
             height={80}
-            src={`${process.env.NEXT_PUBLIC_RIOT_IMG_URL}item/${itemInfo.image.full}`}
+            src={`${RIOT_CONSTANT.RIOT_IMG_URL}item/${itemInfo.image.full}`}
             alt={itemInfo.name}
             className="rounded-full border-2 border-yellow-500"
           />

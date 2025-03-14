@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import parser from "html-react-parser";
+import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
+import { Passive, Spell } from "@/types/ChampionDetail";
 
 type SkillProp =
   | { passive: Passive; spell?: never }
@@ -16,7 +18,7 @@ const SkillCard = ({ passive, spell }: SkillProp) => {
         <Image
           width={passive ? passive.image.w : spell.image.w}
           height={passive ? passive.image.h : spell.image.h}
-          src={`${process.env.NEXT_PUBLIC_RIOT_IMG_URL}${
+          src={`${RIOT_CONSTANT.RIOT_IMG_URL}${
             passive
               ? "passive/" + passive.image.full
               : "spell/" + spell.image.full
