@@ -1,11 +1,12 @@
-import fetchData from "@/app/api/fetchData";
+import fetchRotationChampion from "@/utils/riotApi";
+import serverApi from "@/utils/serverApi";
 import { useQuery } from "@tanstack/react-query";
 
 const useRotationDataQuery = () => {
   return useQuery({
     queryKey: ["rotationId"],
     queryFn: () => {
-      return fetchData.fetchRotationChampion();
+      return fetchRotationChampion();
     },
   });
 };
@@ -14,7 +15,7 @@ const useChampionsDataQuery = () => {
   return useQuery({
     queryKey: ["champions"],
     queryFn: () => {
-      return fetchData.fetchChampion();
+      return serverApi.fetchChampion();
     },
   });
 };

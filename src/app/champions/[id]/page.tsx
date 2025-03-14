@@ -1,7 +1,7 @@
 import SkillCard from "@/_components/SkillCard";
-import fetchData from "@/app/api/fetchData";
 import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
 import { ChampionDetail } from "@/types/ChampionDetail";
+import serverApi from "@/utils/serverApi";
 import Image from "next/image";
 
 type Props = {
@@ -19,7 +19,7 @@ type ChampionDetailType = Pick<
 const ChampionDetailPage = async ({ params }: Props) => {
   const id = params.id;
 
-  const champion: ChampionDetailType = await fetchData.fetchChampionDetail(id);
+  const champion: ChampionDetailType = await serverApi.fetchChampionDetail(id);
   // const { data: champion, isLoading } = useQuery<ChampionDetailType>({
   //   queryKey: ["champions", id],
   //   queryFn: () => fetchData.fetchChampionDetail(id),
