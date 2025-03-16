@@ -1,8 +1,15 @@
-import serverApi from "@/utils/serverApi";
 import ChampionCard from "@/_components/ChampionCard";
+import { fetchChampion, fetchVersion } from "@/utils/serverApi";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Champions",
+  description: "League of Legends Champions",
+};
 
 const ChampinPage = async () => {
-  const champions = await serverApi.fetchChampion();
+  const champions = await fetchChampion();
+  await fetchVersion();
 
   return (
     <div>

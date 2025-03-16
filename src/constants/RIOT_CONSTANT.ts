@@ -1,4 +1,4 @@
-const RIOT_URL = "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/";
+const RIOT_URL = "https://ddragon.leagueoflegends.com";
 const RIOT_IMG_URL = "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/";
 const RIOT_ROTATION_CHAMPION_URL =
   "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations";
