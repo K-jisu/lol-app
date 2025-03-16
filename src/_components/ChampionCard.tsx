@@ -9,7 +9,7 @@ type ChampionProps = {
 };
 
 const ChampionCard = ({
-  champion: { id, name, title, image },
+  champion: { id, name, title, image, version },
 }: ChampionProps) => {
   return (
     <Link href={`/champions/${id}`}>
@@ -18,7 +18,7 @@ const ChampionCard = ({
           <Image
             width={image.w * 2}
             height={image.h * 2}
-            src={`${RIOT_CONSTANT.RIOT_IMG_URL}champion/${image.full}`}
+            src={`${RIOT_CONSTANT.RIOT_URL}/cdn/${version}/img/champion/${image.full}`}
             alt={name}
           />
         </figure>

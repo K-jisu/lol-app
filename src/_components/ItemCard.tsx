@@ -5,9 +5,10 @@ import Link from "next/link";
 
 type ItemProps = {
   item: [string, Item];
+  version: string;
 };
 
-const ItemCard = ({ item }: ItemProps) => {
+const ItemCard = ({ item, version }: ItemProps) => {
   const id = item[0];
   const itemInfo = item[1];
   return (
@@ -18,7 +19,7 @@ const ItemCard = ({ item }: ItemProps) => {
             className="m-auto rounded-md"
             width={80}
             height={80}
-            src={`${RIOT_CONSTANT.RIOT_IMG_URL}item/${itemInfo.image.full}`}
+            src={`${RIOT_CONSTANT.RIOT_URL}/cdn/${version}/img/item/${itemInfo.image.full}`}
             alt={itemInfo.name}
           />
         </figure>
