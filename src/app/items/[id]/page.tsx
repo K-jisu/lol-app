@@ -1,9 +1,15 @@
-"use client";
 import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
 import { Item } from "@/types/Items";
-import serverApi from "@/utils/serverApi";
+import { fetchItems } from "@/utils/serverApi";
 import parse from "html-react-parser";
 import Image from "next/image";
+
+export const generateMetadata = ({ params }: Props) => {
+  return {
+    title: `${params.id}`,
+    description: `${params.id}`,
+  };
+};
 
 type Props = {
   params: {
@@ -15,7 +21,7 @@ type ItemDetailType = Omit<Item, "colloq" | "into" | "tags" | "maps" | "stats">;
 
 const page = async ({ params }: Props) => {
   const id = params.id;
-  const data = await serverApi.fetchItems();
+  const data = await fetchItems();
 
   const itemArray = data.filter((item) => item[0] === id)[0];
   const itemInfo: ItemDetailType = itemArray[1];
