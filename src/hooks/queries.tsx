@@ -1,28 +1,29 @@
+"use client";
+import { Champion } from "@/types/Champions";
 import fetchRotationChampion from "@/utils/riotApi";
 import { fetchChampion } from "@/utils/serverApi";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 
-const useRotationDataQuery = () => {
-  return useQuery({
+export const useRotationDataQuery = ({
+  rotationInitial,
+}: {
+  rotationInitial: [number[], number[], number];
+}) => {
+  return useSuspenseQuery({
     queryKey: ["rotationId"],
-    queryFn: () => {
-      return fetchRotationChampion();
-    },
+    queryFn: () => fetchRotationChampion(),
+    initialData: rotationInitial,
   });
 };
 
-const useChampionsDataQuery = () => {
-  return useQuery({
+export const useChampionsDataQuery = ({
+  champsInitial,
+}: {
+  champsInitial: Champion[];
+}) => {
+  return useSuspenseQuery({
     queryKey: ["champions"],
-    queryFn: () => {
-      return fetchChampion();
-    },
+    queryFn: () => fetchChampion(),
+    initialData: champsInitial,
   });
 };
-
-const useChampionsQueries = {
-  useRotationDataQuery,
-  useChampionsDataQuery,
-};
-
-export default useChampionsQueries;
