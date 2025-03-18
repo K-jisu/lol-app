@@ -6,7 +6,7 @@ const fetchRotationChampion = async (): Promise<
   [number[], number[], number]
 > => {
   // const res = await fetch(`${RIOT_CONSTANT.BASE_URL}/api/rotationChampions`);
-  const res = await fetch("/api/rotationChampions");
+  const res = await fetch("/api/rotation");
   const data: RotationChampionData = await res.json();
   return [
     data.freeChampionIds,
