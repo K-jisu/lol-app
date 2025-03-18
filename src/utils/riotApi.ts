@@ -1,4 +1,4 @@
-import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
+// import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
 import { RotationChampionData } from "@/types/Championrotation";
 
 //CSR
