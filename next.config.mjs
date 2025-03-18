@@ -8,6 +8,7 @@ const nextConfig = {
         pathname: "/cdn/15.5.1/img/**",
       },
     ],
+    formats: ["image/avif", "image/webp"],
   },
 };
 
