@@ -1,4 +1,4 @@
-import ChampionCard from "@/_components/ChampionCard";
+import ChampionCard from "@/components/ChampionCard";
 import { fetchChampion, fetchVersion } from "@/utils/serverApi";
 import { Metadata } from "next";
 

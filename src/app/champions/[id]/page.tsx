@@ -1,4 +1,4 @@
-import SkillCard from "@/_components/SkillCard";
+import SkillCard from "@/components/SkillCard";
 import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
 import { ChampionDetail } from "@/types/ChampionDetail";
 import { fetchChampionDetail } from "@/utils/serverApi";

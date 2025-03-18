@@ -1,4 +1,4 @@
-import RotationClientPage from "@/_components/RotationClientPage";
+import RotationClientPage from "@/components/RotationClientPage";
 import fetchRotationChampion from "@/utils/riotApi";
 import { fetchChampion } from "@/utils/serverApi";
 

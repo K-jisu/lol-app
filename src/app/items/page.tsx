@@ -1,4 +1,4 @@
-import ItemCard from "@/_components/ItemCard";
+import ItemCard from "@/components/ItemCard";
 import { fetchItems, fetchVersion } from "@/utils/serverApi";
 import { Metadata } from "next";
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
-import Providers from "@/_components/providers/RQProvier";
+import Providers from "@/components/providers/RQProvier";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
