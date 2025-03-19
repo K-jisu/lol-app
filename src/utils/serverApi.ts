@@ -1,5 +1,3 @@
-"use server";
-
 import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
 import { ChampionDetail, GameData } from "@/types/ChampionDetail";
 import { Champion } from "@/types/Champions";
