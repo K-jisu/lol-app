@@ -1,6 +1,8 @@
 # 🎉 1세대 푸키먼 도감
 
-![image](https://github.com/user-attachments/assets/7b3976e7-ba27-436e-a97f-3c5764648e77)
+![image](https://github.com/user-attachments/assets/1397f3b4-dbbb-4ab7-84f7-c07a6c6c796f)
+
+
 
 # 🔖 프로젝트 개요
 
@@ -35,36 +37,42 @@ Rit API를 활용하여 Nextjs의 다양한 렌더링(SSR, SSG, ISR, CSR)방식�
 <details>
   <summary>홈 화면</summary>
 
-![image](https://github.com/user-attachments/assets/7b3976e7-ba27-436e-a97f-3c5764648e77)
+![image](https://github.com/user-attachments/assets/0d94fcfb-b45f-465f-b8ec-f63d5c9ed62a)
+
 
 </details>
 <details>
   <summary>챔피언 목록</summary>
 
-![image](https://github.com/user-attachments/assets/0d7b9271-08a6-4b4d-88d4-1e240a7e6684)
+![image](https://github.com/user-attachments/assets/b073aaa2-659f-419c-a4e5-ed31c7529028)
+
 
 </details>
 <details>
   <summary>아이템 목록</summary>
 
-![image](https://github.com/user-attachments/assets/2b26992e-7c49-4c49-94cc-b54518c9be29)
+![image](https://github.com/user-attachments/assets/2e24754c-f55d-476c-ae93-6a4519a1fa4e)
+
 
 </details>
 <details>
   <summary>로테이션 챔피언 목록</summary>
 
-![image](https://github.com/user-attachments/assets/2b26992e-7c49-4c49-94cc-b54518c9be29)
+![image](https://github.com/user-attachments/assets/f9643096-2978-4108-a0f1-c5b79262a31f)
+
 
 </details>
 <details>
   <summary>챔피언 디테일</summary>
 
-![image](https://github.com/user-attachments/assets/2b26992e-7c49-4c49-94cc-b54518c9be29)
+![image](https://github.com/user-attachments/assets/dde33ce6-c797-4b22-b10b-e8accc94394f)
+
 
 </details>
 <details>
   <summary>아이템 디테일</summary>
 
-![image](https://github.com/user-attachments/assets/2b26992e-7c49-4c49-94cc-b54518c9be29)
+![image](https://github.com/user-attachments/assets/2033c40b-9128-45f8-acc4-4244a67af590)
+
 
 </details>
