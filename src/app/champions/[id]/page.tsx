@@ -1,7 +1,7 @@
 import SkillCard from "@/components/SkillCard";
 import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
 import { ChampionDetail } from "@/types/ChampionDetail";
-import { fetchChampionDetail } from "@/utils/serverApi";
+import { fetchChampionDetail, fetchVersion } from "@/utils/serverApi";
 import Image from "next/image";
 
 export const generateMetadata = ({ params }: Props) => {
@@ -25,6 +25,7 @@ type ChampionDetailType = Pick<
 // SSR
 const ChampionDetailPage = async ({ params }: Props) => {
   const id = params.id;
+  const version = await fetchVersion();
 
   const champion: ChampionDetailType = await fetchChampionDetail(id);
 
@@ -37,7 +38,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
           width={200}
           height={200}
           src={`
-            ${RIOT_CONSTANT.RIOT_IMG_URL}/champion/${champion.image.full}
+            ${RIOT_CONSTANT.RIOT_URL}/cdn/${version}/img/champion/${champion.image.full}
           `}
           alt={champion.id}
           className="rounded-lg border-4 border-yellow-500 shadow-lg"

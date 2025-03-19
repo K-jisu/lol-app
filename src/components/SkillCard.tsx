@@ -3,12 +3,14 @@ import React from "react";
 import parser from "html-react-parser";
 import RIOT_CONSTANT from "@/constants/RIOT_CONSTANT";
 import { Passive, Spell } from "@/types/ChampionDetail";
+import { fetchVersion } from "@/utils/serverApi";
 
 type SkillProp =
   | { passive: Passive; spell?: never }
   | { passive?: never; spell: Spell };
 
-const SkillCard = ({ passive, spell }: SkillProp) => {
+const SkillCard = async ({ passive, spell }: SkillProp) => {
+  const version = await fetchVersion();
   return (
     <article className="bg-gray-800 border border-yellow-500 rounded-lg p-4 shadow-md max-w-2xl">
       <h3 className="text-yellow-400 text-xl font-bold mb-2 text-center">
@@ -18,7 +20,7 @@ const SkillCard = ({ passive, spell }: SkillProp) => {
         <Image
           width={passive ? passive.image.w : spell.image.w}
           height={passive ? passive.image.h : spell.image.h}
-          src={`${RIOT_CONSTANT.RIOT_IMG_URL}${
+          src={`${RIOT_CONSTANT.RIOT_URL}/cdn/${version}/img/${
             passive
               ? "passive/" + passive.image.full
               : "spell/" + spell.image.full
