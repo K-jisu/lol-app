@@ -37,9 +37,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
         <Image
           width={200}
           height={200}
-          src={`
-            ${RIOT_CONSTANT.RIOT_URL}/cdn/${version}/img/champion/${champion.image.full}
-          `}
+          src={`${RIOT_CONSTANT.RIOT_URL}/cdn/${version}/img/champion/${champion.image.full}`}
           alt={champion.id}
           className="rounded-lg border-4 border-yellow-500 shadow-lg"
         />
