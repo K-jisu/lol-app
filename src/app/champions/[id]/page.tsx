@@ -27,14 +27,6 @@ const ChampionDetailPage = async ({ params }: Props) => {
   const id = params.id;
 
   const champion: ChampionDetailType = await fetchChampionDetail(id);
-  // const { data: champion, isLoading } = useQuery<ChampionDetailType>({
-  //   queryKey: ["champions", id],
-  //   queryFn: () => fetchData.fetchChampionDetail(id),
-  // });
-
-  // if (isLoading) return <div>...Loading</div>;
-
-  // console.log(champion);
 
   return (
     <div className="text-gray-300 min-h-screen flex flex-col items-center py-10 px-5">
