@@ -13,7 +13,8 @@ const serverPage = async () => {
       />
     );
   } catch (error) {
-    console.log("데이터를 불러오는데 실패했습니다.");
+    console.log("데이터를 불러오는데 실패했습니다.", error);
+    return <div>"데이터를 불러오는데 실패했습니다."</div>;
   }
 };
 
