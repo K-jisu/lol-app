@@ -1,4 +1,4 @@
-# 🎉 1세대 푸키먼 도감
+# 🎉 LoL info APP
 
 ![image](https://github.com/user-attachments/assets/1397f3b4-dbbb-4ab7-84f7-c07a6c6c796f)
 
