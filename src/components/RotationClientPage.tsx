@@ -2,23 +2,14 @@
 
 import Loading from "@/app/rotation/loading";
 import { useChampionsDataQuery, useRotationDataQuery } from "@/hooks/queries";
-import { Champion } from "@/types/Champions";
 import conversionFreeChampion from "@/utils/conversionFreeChampion";
 import { Suspense } from "react";
 import ChampionCard from "./ChampionCard";
 
-export type RotationProps = {
-  rotationInitial: [number[], number[], number];
-  champsInitial: Champion[];
-};
+const RotationClientPage = () => {
+  const { data: rotationData } = useRotationDataQuery();
 
-const RotationClientPage = ({
-  rotationInitial,
-  champsInitial,
-}: RotationProps) => {
-  const { data: rotationData } = useRotationDataQuery({ rotationInitial });
-
-  const { data: champions } = useChampionsDataQuery({ champsInitial });
+  const { data: champions } = useChampionsDataQuery();
 
   const freeChampionsId = rotationData[0];
   const freeChampionForNewbieId = rotationData[1];
